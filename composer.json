@@ -1,6 +1,6 @@
 {
     "name": "matthewbdaly/laravel-impersonator",
-    "description": "Simple Laravel shopping cart",
+    "description": "Impersonate other users to assist in resolving issues",
     "keywords": ["laravel","impersonator","impersonate"],
     "type": "library",
     "require-dev": {
