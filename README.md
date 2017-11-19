@@ -20,4 +20,8 @@ Then just include this in your `app/Http/Kernel.php` in the appropriate place wh
 \Matthewbdaly\LaravelImpersonator\Http\Middleware\Impersonator::class
 ```
 
-You can apply it globally, or only to specific routes as you wish.
+You can apply it globally, or only to specific routes as you wish. You will also need to add the trait `Matthewbdaly\LaravelImpersonator\Eloquent\Traits\CanImpersonate` to your user model to add these methods:
+
+* `startImpersonating($id)` - start impersonating user `$id`
+* `stopImpersonating()` - stop impersonating
+* `isImpersonating()` - Is user impersonating or not?
