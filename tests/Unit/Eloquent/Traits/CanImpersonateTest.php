@@ -14,7 +14,6 @@ class CanImpersonateTest extends TestCase
         $user2 = factory(User::class)->create();
         $session = m::mock('Illuminate\Contracts\Session\Session');
         $session->shouldReceive('put')->with('impersonate', $user2->id)->once();
-        $this->app->instance('Illuminate\Contracts\Session\Session', $session);
-        $user1->startImpersonating($user2->id);
+        $user1->startImpersonating($user2->id, $session);
     }
 }
