@@ -3,7 +3,7 @@
 namespace Tests\Unit\Http\Middleware;
 
 use Tests\TestCase;
-use Matthew\LaravelImpersonator\Http\Middleware\Impersonator;
+use Matthewbdaly\LaravelImpersonator\Http\Middleware\Impersonator;
 use Illuminate\Http\Request;
 use Mockery as m;
 
