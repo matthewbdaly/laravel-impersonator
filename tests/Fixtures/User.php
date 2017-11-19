@@ -4,6 +4,7 @@ namespace Tests\Fixtures;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Matthewbdaly\LaravelImpersonator\Eloquent\Traits\CanImpersonate;
 
 /**
  * Generic user implementation purely for testing
@@ -13,7 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, CanImpersonate;
 
     /**
      * The attributes that are mass assignable.
