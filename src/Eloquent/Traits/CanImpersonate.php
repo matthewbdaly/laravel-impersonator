@@ -15,4 +15,9 @@ trait CanImpersonate
     {
         $session->forget('impersonate');
     }
+
+    public function isImpersonating(Session $session)
+    {
+        return $session->has('impersonate');
+    }
 }

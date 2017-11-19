@@ -24,4 +24,20 @@ class CanImpersonateTest extends TestCase
         $session->shouldReceive('forget')->with('impersonate')->once();
         $user1->stopImpersonating($session);
     }
+    
+    public function testIsImpersonatingTrue()
+    {
+        $user1 = factory(User::class)->create();
+        $session = m::mock('Illuminate\Contracts\Session\Session');
+        $session->shouldReceive('has')->with('impersonate')->once()->andReturn(true);
+        $this->assertTrue($user1->isImpersonating($session));
+    }
+ 
+    public function testIsImpersonatingFalse()
+    {
+        $user1 = factory(User::class)->create();
+        $session = m::mock('Illuminate\Contracts\Session\Session');
+        $session->shouldReceive('has')->with('impersonate')->once()->andReturn(false);
+        $this->assertFalse($user1->isImpersonating($session));
+    }
 }
