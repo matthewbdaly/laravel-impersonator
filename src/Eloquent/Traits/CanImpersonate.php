@@ -10,4 +10,9 @@ trait CanImpersonate
     {
         $session->put('impersonate', $id);
     }
+
+    public function stopImpersonating(Session $session)
+    {
+        $session->forget('impersonate');
+    }
 }
